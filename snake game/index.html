@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+      rel="stylesheet"
+    />
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="back.js" defer></script>
+  </head>
+  <body>
+    <div>
+      <div class="scores">
+        <h1 id="score">000</h1>
+        <h1 id="highScore">000</h1>
+      </div>
+      <div class="game-border-1">
+        <div class="game-border-2">
+          <div class="game-border-3">
+            <div id="game-board"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h1 id="instruction-text">Press spacebar to start the game</h1>
+    <img id="logo" src="data:image/png;base64,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" alt="snake-logo" />
+  </body>
+</html>
